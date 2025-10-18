@@ -3,10 +3,10 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-movies = pickle.load(open("movies.pkl","rb"))
+movies = pickle.load(open("../data/movies.pkl", "rb"))
 movies_list = movies["title"].values
 
-similarity = pickle.load(open("similarity.pkl","rb"))
+similarity = pickle.load(open("../data/similarity.pkl", "rb"))
 
 
 API_KEY = "083eb866ff712773c0d9d765d7d6b602"
