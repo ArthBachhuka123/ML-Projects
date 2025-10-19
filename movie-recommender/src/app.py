@@ -2,14 +2,18 @@ import requests
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
-movies = pickle.load(open("../data/movies.pkl", "rb"))
+BASE_DIR = os.path.dirname(__file__)  # src folder
+DATA_DIR = os.path.join(BASE_DIR, "..", "data")  # move up to repo root then data
+
+movies = pickle.load(open(os.path.join(DATA_DIR, "movies.pkl"), "rb"))
+similarity = pickle.load(open(os.path.join(DATA_DIR, "similarity.pkl"), "rb"))
 movies_list = movies["title"].values
 
-similarity = pickle.load(open("../data/similarity.pkl", "rb"))
 
+API_KEY = st.secrets["TMDB_API_KEY"]
 
-API_KEY = "083eb866ff712773c0d9d765d7d6b602"
 
 def fetch_data(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
