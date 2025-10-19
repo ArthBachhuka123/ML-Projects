@@ -3,12 +3,22 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os
+import gdown
 
 BASE_DIR = os.path.dirname(__file__)  # src folder
 DATA_DIR = os.path.join(BASE_DIR, "..", "data")  # move up to repo root then data
 
+file_id = '1FhiDqVVnWF2_CLqdOk2vY33HUQAQb_SV'
+url = f'https://drive.google.com/uc?id={file_id}'
+output_path = os.path.join(DATA_DIR, 'similarity.pkl')
+
+if not os.path.exists(output_path):
+    print("Downloading similarity.pkl from Google Drive...")
+    gdown.download(url, output_path, quiet=False)
+
+
 movies = pickle.load(open(os.path.join(DATA_DIR, "movies.pkl"), "rb"))
-similarity = pickle.load(open(os.path.join(DATA_DIR, "similarity.pkl"), "rb"))
+similarity = pickle.load(open(output_path, 'rb'))
 movies_list = movies["title"].values
 
 
