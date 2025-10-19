@@ -14,7 +14,6 @@ movies_list = movies["title"].values
 
 API_KEY = st.secrets["TMDB_API_KEY"]
 
-
 def fetch_data(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
     response = requests.get(url)
