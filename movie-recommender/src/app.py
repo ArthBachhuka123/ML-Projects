@@ -22,7 +22,8 @@ similarity = pickle.load(open(output_path, 'rb'))
 movies_list = movies["title"].values
 
 
-API_KEY = st.secrets["TMDB_API_KEY"]
+# API_KEY = st.secrets["TMDB_API_KEY"]
+API_KEY = "083eb866ff712773c0d9d765d7d6b602"
 
 def fetch_data(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
