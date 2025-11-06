@@ -2,7 +2,7 @@ from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 import streamlit as st
 import os
-from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate,load_prompt
 
 load_dotenv()
 
@@ -62,11 +62,11 @@ validate_template=True
 )
 
 
-prompt = template.invoke({
-    "paper_input": paper_input,
-    "style_input": style_input,
-    "length_input": length_input
-})
+prompt = load_prompt("template.json").format(
+    paper_input=paper_input,
+    style_input=style_input,
+    length_input=length_input
+)
 
 if st.button("Summarize"):
     response = chatModel.invoke(prompt)
