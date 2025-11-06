@@ -62,13 +62,15 @@ validate_template=True
 )
 
 
-prompt = load_prompt("template.json").format(
-    paper_input=paper_input,
-    style_input=style_input,
-    length_input=length_input
-)
+template= load_prompt("template.json")
+  
 
 if st.button("Summarize"):
-    response = chatModel.invoke(prompt)
+    chain = template | chatModel
+    response = chain.invoke({
+        "paper_input": paper_input,
+        "style_input": style_input,
+        "length_input": length_input
+    })
     st.subheader("Summary:")
     st.write(response.content)
