@@ -1,2 +1,62 @@
-.venv
-movie-recommender/data/similarity.pkl
+# ------------------------
+# PYTHON
+# ------------------------
+__pycache__/
+*.pyc
+*.pyo
+
+# ------------------------
+# ENVIRONMENT / VENV
+# ------------------------
+venv/
+env/
+.venv/
+.conda/
+*/.venv/
+*/venv/
+*/env/
+
+# ------------------------
+# ENV VARIABLES
+# ------------------------
+.env
+*/.env
+
+# ------------------------
+# DATABASE / CHECKPOINTS
+# ------------------------
+*.db
+*.sqlite
+*.sqlite3
+ChatBot.db
+*/ChatBot.db
+
+# ------------------------
+# EDITOR / IDE FILES
+# ------------------------
+.vscode/
+.idea/
+
+# ------------------------
+# SYSTEM FILES
+# ------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------
+# LOGS / OUTPUT
+# ------------------------
+*.log
+
+# ------------------------
+# UV / PACKAGE MANAGER
+# ------------------------
+uv.lock
+
+# ------------------------
+# CHATBOT / STREAMLIT GENERATED FILES
+# ------------------------
+uploads/
+*.pdf
+*.csv
+*.zip
