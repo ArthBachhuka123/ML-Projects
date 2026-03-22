@@ -56,11 +56,14 @@ Each project is organized into its own folder with code and resources.
 
 ## 🛠️ Tech Stack
 
-- Python 🐍
+- Python 
 - Scikit-learn
 - Pandas / NumPy
 - Hugging Face
-- LangChain (if used)
+- Groq 
+- LangChain 
+- Langgraph
+- Streamlit frontend
 - APIs (LLMs)
 
 ---
